@@ -1,0 +1,50 @@
+<div itemscope itemtype="http://developers.google.com/ReferenceObject">
+<meta itemprop="name" content="tf.signal.fft2d" />
+<meta itemprop="path" content="Stable" />
+</div>
+
+# tf.signal.fft2d
+
+<!-- Insert buttons and diff -->
+
+<table class="tfo-notebook-buttons tfo-api" align="left">
+</table>
+
+
+
+2D fast Fourier transform.
+
+``` python
+tf.signal.fft2d(
+    input,
+    name=None
+)
+```
+
+
+
+<!-- Placeholder for "Used in" -->
+
+Computes the 2-dimensional discrete Fourier transform over the inner-most
+2 dimensions of `input`.
+
+#### Args:
+
+
+* <b>`input`</b>: A `Tensor`. Must be one of the following types: `complex64`, `complex128`.
+  A complex tensor.
+* <b>`name`</b>: A name for the operation (optional).
+
+
+#### Returns:
+
+A `Tensor`. Has the same type as `input`.
+
+
+## Compat aliases
+
+* `tf.compat.v1.fft2d`
+* `tf.compat.v1.signal.fft2d`
+* `tf.compat.v1.spectral.fft2d`
+* `tf.compat.v2.signal.fft2d`
+

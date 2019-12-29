@@ -1,0 +1,130 @@
+<div itemscope itemtype="http://developers.google.com/ReferenceObject">
+<meta itemprop="name" content="tf.keras.callbacks.ReduceLROnPlateau" />
+<meta itemprop="path" content="Stable" />
+<meta itemprop="property" content="__init__"/>
+<meta itemprop="property" content="in_cooldown"/>
+<meta itemprop="property" content="set_model"/>
+<meta itemprop="property" content="set_params"/>
+</div>
+
+# tf.keras.callbacks.ReduceLROnPlateau
+
+<!-- Insert buttons and diff -->
+
+<table class="tfo-notebook-buttons tfo-api" align="left">
+</table>
+
+<a target="_blank" href="/code/stable/tensorflow/python/keras/callbacks.py">View source</a>
+
+
+
+## Class `ReduceLROnPlateau`
+
+Reduce learning rate when a metric has stopped improving.
+
+Inherits From: [`Callback`](../../../tf/keras/callbacks/Callback.md)
+
+<!-- Placeholder for "Used in" -->
+
+Models often benefit from reducing the learning rate by a factor
+of 2-10 once learning stagnates. This callback monitors a
+quantity and if no improvement is seen for a 'patience' number
+of epochs, the learning rate is reduced.
+
+#### Example:
+
+
+
+```python
+reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.2,
+                              patience=5, min_lr=0.001)
+model.fit(X_train, Y_train, callbacks=[reduce_lr])
+```
+
+#### Arguments:
+
+
+* <b>`monitor`</b>: quantity to be monitored.
+* <b>`factor`</b>: factor by which the learning rate will be reduced. new_lr = lr *
+  factor
+* <b>`patience`</b>: number of epochs with no improvement after which learning rate
+  will be reduced.
+* <b>`verbose`</b>: int. 0: quiet, 1: update messages.
+* <b>`mode`</b>: one of {auto, min, max}. In `min` mode, lr will be reduced when the
+  quantity monitored has stopped decreasing; in `max` mode it will be
+  reduced when the quantity monitored has stopped increasing; in `auto`
+  mode, the direction is automatically inferred from the name of the
+  monitored quantity.
+* <b>`min_delta`</b>: threshold for measuring the new optimum, to only focus on
+  significant changes.
+* <b>`cooldown`</b>: number of epochs to wait before resuming normal operation after
+  lr has been reduced.
+* <b>`min_lr`</b>: lower bound on the learning rate.
+
+<h2 id="__init__"><code>__init__</code></h2>
+
+<a target="_blank" href="/code/stable/tensorflow/python/keras/callbacks.py">View source</a>
+
+``` python
+__init__(
+    monitor='val_loss',
+    factor=0.1,
+    patience=10,
+    verbose=0,
+    mode='auto',
+    min_delta=0.0001,
+    cooldown=0,
+    min_lr=0,
+    **kwargs
+)
+```
+
+Initialize self.  See help(type(self)) for accurate signature.
+
+
+
+
+## Methods
+
+<h3 id="in_cooldown"><code>in_cooldown</code></h3>
+
+<a target="_blank" href="/code/stable/tensorflow/python/keras/callbacks.py">View source</a>
+
+``` python
+in_cooldown()
+```
+
+
+
+
+<h3 id="set_model"><code>set_model</code></h3>
+
+<a target="_blank" href="/code/stable/tensorflow/python/keras/callbacks.py">View source</a>
+
+``` python
+set_model(model)
+```
+
+
+
+
+<h3 id="set_params"><code>set_params</code></h3>
+
+<a target="_blank" href="/code/stable/tensorflow/python/keras/callbacks.py">View source</a>
+
+``` python
+set_params(params)
+```
+
+
+
+
+
+
+
+
+## Compat aliases
+
+* `tf.compat.v1.keras.callbacks.ReduceLROnPlateau`
+* `tf.compat.v2.keras.callbacks.ReduceLROnPlateau`
+
